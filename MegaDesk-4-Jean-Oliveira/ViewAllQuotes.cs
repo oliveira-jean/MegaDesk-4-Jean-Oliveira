@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MegaDesk_4_Jean_Oliveira
 {
-    public partial class MainMenu : Form
+    public partial class ViewAllQuotes : Form
     {
-        public MainMenu()
+        public ViewAllQuotes()
         {
             InitializeComponent();
         }
