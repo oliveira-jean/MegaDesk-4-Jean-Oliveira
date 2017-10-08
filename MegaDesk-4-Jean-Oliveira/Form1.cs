@@ -16,5 +16,27 @@ namespace MegaDesk_4_Jean_Oliveira
         {
             InitializeComponent();
         }
+
+        private void AddNewQuoteButton_Click(object sender, EventArgs e)
+        {
+            AddQuote addNewQuoteForm = new AddQuote();
+            addNewQuoteForm.Show();
+            this.Hide();
+        }
+
+        private void ViewQuotesButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SearchQuotesButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
