@@ -36,8 +36,7 @@
             this.depthTextBox = new System.Windows.Forms.TextBox();
             this.depthInputLabel = new System.Windows.Forms.Label();
             this.drawersSelectLabel = new System.Windows.Forms.Label();
-            this.drawersComboBox = new System.Windows.Forms.ComboBox();
-            this.materialsComboBox = new System.Windows.Forms.ComboBox();
+            this.desktopMaterialComboBox = new System.Windows.Forms.ComboBox();
             this.materialsSelectLabel = new System.Windows.Forms.Label();
             this.noneRadioButton = new System.Windows.Forms.RadioButton();
             this.threeRadioButton = new System.Windows.Forms.RadioButton();
@@ -45,6 +44,7 @@
             this.sevenRadioButton = new System.Windows.Forms.RadioButton();
             this.rushOrderLabel = new System.Windows.Forms.Label();
             this.submitOrderButton = new System.Windows.Forms.Button();
+            this.DrawersCombobox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // addQuoteFormLabel
@@ -55,7 +55,6 @@
             this.addQuoteFormLabel.Size = new System.Drawing.Size(86, 13);
             this.addQuoteFormLabel.TabIndex = 0;
             this.addQuoteFormLabel.Text = "Add Desk Quote";
-            this.addQuoteFormLabel.Click += new System.EventHandler(this.AddQuoteLabel_Click);
             // 
             // widthInputLabel
             // 
@@ -65,7 +64,6 @@
             this.widthInputLabel.Size = new System.Drawing.Size(276, 13);
             this.widthInputLabel.TabIndex = 1;
             this.widthInputLabel.Text = "Enter the WIDTH of the desk in inches( 24\" min; 96 max)";
-            this.widthInputLabel.Click += new System.EventHandler(this.WidthInputLabel_Click);
             // 
             // widthTextBox
             // 
@@ -74,6 +72,7 @@
             this.widthTextBox.Size = new System.Drawing.Size(100, 20);
             this.widthTextBox.TabIndex = 1;
             this.widthTextBox.TextChanged += new System.EventHandler(this.WidthTextBox_TextChanged);
+            this.widthTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.widthTextBox_Validating);
             // 
             // depthTextBox
             // 
@@ -82,6 +81,8 @@
             this.depthTextBox.Size = new System.Drawing.Size(100, 20);
             this.depthTextBox.TabIndex = 2;
             this.depthTextBox.TextChanged += new System.EventHandler(this.DepthTextBox_TextChanged);
+            this.depthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.depthTextBox_KeyPress);
+            this.depthTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.depthTextBox_Validating);
             // 
             // depthInputLabel
             // 
@@ -91,7 +92,6 @@
             this.depthInputLabel.Size = new System.Drawing.Size(276, 13);
             this.depthInputLabel.TabIndex = 3;
             this.depthInputLabel.Text = "Enter the DEPTH of the desk in inches( 12\" min; 56 max)";
-            this.depthInputLabel.Click += new System.EventHandler(this.DepthInputLabel_Click);
             // 
             // drawersSelectLabel
             // 
@@ -101,25 +101,15 @@
             this.drawersSelectLabel.Size = new System.Drawing.Size(164, 13);
             this.drawersSelectLabel.TabIndex = 5;
             this.drawersSelectLabel.Text = "Select the number of DRAWERS";
-            this.drawersSelectLabel.Click += new System.EventHandler(this.DrawersSelectLabel_Click);
             // 
-            // drawersComboBox
+            // desktopMaterialComboBox
             // 
-            this.drawersComboBox.FormattingEnabled = true;
-            this.drawersComboBox.Location = new System.Drawing.Point(15, 161);
-            this.drawersComboBox.Name = "drawersComboBox";
-            this.drawersComboBox.Size = new System.Drawing.Size(121, 21);
-            this.drawersComboBox.TabIndex = 3;
-            this.drawersComboBox.SelectedIndexChanged += new System.EventHandler(this.DrawersComboBox_SelectedIndexChanged);
-            // 
-            // materialsComboBox
-            // 
-            this.materialsComboBox.FormattingEnabled = true;
-            this.materialsComboBox.Location = new System.Drawing.Point(15, 212);
-            this.materialsComboBox.Name = "materialsComboBox";
-            this.materialsComboBox.Size = new System.Drawing.Size(121, 21);
-            this.materialsComboBox.TabIndex = 4;
-            this.materialsComboBox.SelectedIndexChanged += new System.EventHandler(this.MaterialsComboBox_SelectedIndexChanged);
+            this.desktopMaterialComboBox.FormattingEnabled = true;
+            this.desktopMaterialComboBox.Location = new System.Drawing.Point(15, 212);
+            this.desktopMaterialComboBox.Name = "desktopMaterialComboBox";
+            this.desktopMaterialComboBox.Size = new System.Drawing.Size(121, 21);
+            this.desktopMaterialComboBox.TabIndex = 4;
+            this.desktopMaterialComboBox.SelectedIndexChanged += new System.EventHandler(this.MaterialsComboBox_SelectedIndexChanged);
             // 
             // materialsSelectLabel
             // 
@@ -129,7 +119,6 @@
             this.materialsSelectLabel.Size = new System.Drawing.Size(160, 13);
             this.materialsSelectLabel.TabIndex = 7;
             this.materialsSelectLabel.Text = "Select the desktop MATERIALS";
-            this.materialsSelectLabel.Click += new System.EventHandler(this.MaterialsSelectLabel_Click);
             // 
             // noneRadioButton
             // 
@@ -187,7 +176,6 @@
             this.rushOrderLabel.Size = new System.Drawing.Size(61, 13);
             this.rushOrderLabel.TabIndex = 13;
             this.rushOrderLabel.Text = "Rush Order";
-            this.rushOrderLabel.Click += new System.EventHandler(this.RushOrderLabel_Click);
             // 
             // submitOrderButton
             // 
@@ -200,20 +188,36 @@
             this.submitOrderButton.UseVisualStyleBackColor = true;
             this.submitOrderButton.Click += new System.EventHandler(this.SubmitOrderButton_Click);
             // 
+            // DrawersCombobox
+            // 
+            this.DrawersCombobox.FormattingEnabled = true;
+            this.DrawersCombobox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"});
+            this.DrawersCombobox.Location = new System.Drawing.Point(15, 162);
+            this.DrawersCombobox.Name = "DrawersCombobox";
+            this.DrawersCombobox.Size = new System.Drawing.Size(121, 21);
+            this.DrawersCombobox.TabIndex = 14;
+            // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(423, 388);
+            this.Controls.Add(this.DrawersCombobox);
             this.Controls.Add(this.submitOrderButton);
             this.Controls.Add(this.rushOrderLabel);
             this.Controls.Add(this.sevenRadioButton);
             this.Controls.Add(this.fiveRadioButton);
             this.Controls.Add(this.threeRadioButton);
             this.Controls.Add(this.noneRadioButton);
-            this.Controls.Add(this.materialsComboBox);
+            this.Controls.Add(this.desktopMaterialComboBox);
             this.Controls.Add(this.materialsSelectLabel);
-            this.Controls.Add(this.drawersComboBox);
             this.Controls.Add(this.drawersSelectLabel);
             this.Controls.Add(this.depthTextBox);
             this.Controls.Add(this.depthInputLabel);
@@ -236,8 +240,7 @@
         private System.Windows.Forms.TextBox depthTextBox;
         private System.Windows.Forms.Label depthInputLabel;
         private System.Windows.Forms.Label drawersSelectLabel;
-        private System.Windows.Forms.ComboBox drawersComboBox;
-        private System.Windows.Forms.ComboBox materialsComboBox;
+        private System.Windows.Forms.ComboBox desktopMaterialComboBox;
         private System.Windows.Forms.Label materialsSelectLabel;
         private System.Windows.Forms.RadioButton noneRadioButton;
         private System.Windows.Forms.RadioButton threeRadioButton;
@@ -245,5 +248,6 @@
         private System.Windows.Forms.RadioButton sevenRadioButton;
         private System.Windows.Forms.Label rushOrderLabel;
         private System.Windows.Forms.Button submitOrderButton;
+        private System.Windows.Forms.ComboBox DrawersCombobox;
     }
 }

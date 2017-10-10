@@ -19,7 +19,7 @@ namespace MegaDesk_4_Jean_Oliveira
         private int doRushDays;
 
         public int deskQuote { get; set; }
-        public DateTime quoDate { get; set; }
+        public DateTime quoteDate { get; set; }
 
         public int BASEPRICE = 200; //The base price for any desk quote
         private int BASESIZE = 1000; // tHE BASE PRICE FOR SIZE MAXIMUM
@@ -39,7 +39,7 @@ namespace MegaDesk_4_Jean_Oliveira
 
         public int surfaceCost()
         {
-            //Dtermine if additional cost is warranted with desk areas greater than DESKTOP BASE SIZE
+            //Determine if additional cost is warranted with desk areas greater than DESKTOP BASE SIZE
 
             if (doSurfaceArea > BASESIZE)
             {
@@ -56,7 +56,7 @@ namespace MegaDesk_4_Jean_Oliveira
             return doDrawers * DRAWERCOST;
         }
 
-        public int surfaceMaterialCost()
+        public int SurfaceMaterialCost()
         {
             //Select the material cost
             int materialCost = 0;
@@ -72,18 +72,19 @@ namespace MegaDesk_4_Jean_Oliveira
                     materialCost = 50;
                     break;
                 default:
-                    materialCost = -1 //error check
+                    materialCost = -1;//error check
                     break;
             }
+            return materialCost;
         }
 
-        public rushOrderCost()
+        public int RushOrderCost()
         {
             //magic number used for surface area and costs
             int rushCost = 0;
             if (doRushDays <= RUSH1)
             {
-                if(doSurfaceArea <= BASESIZE)
+                if (doSurfaceArea <= BASESIZE)
                 {
                     rushCost = 60;
                 }
@@ -126,6 +127,7 @@ namespace MegaDesk_4_Jean_Oliveira
                     rushCost = 40;
                 }
             }
+            return rushCost;
         }
     }
 }
