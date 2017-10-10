@@ -43,8 +43,7 @@ namespace MegaDesk_4_Jean_Oliveira
             };
 
             desktopMaterialComboBox.DataSource = materials;
-            //deskMaterial.DataSource = Enum.GetValues(typeof(Desk.Material));
-
+            
         }
 
         //private void AddQuoteLabel_Click(object sender, EventArgs e)
@@ -169,9 +168,9 @@ namespace MegaDesk_4_Jean_Oliveira
 
         private void SubmitOrderButton_Click(object sender, EventArgs e)
         {
-            //DisplayQuote newDisplayQuote = new DisplayQuote();
-            //newDisplayQuote.Show();
-            //this.Hide();
+            DisplayQuote newDisplayQuote = new DisplayQuote();
+            newDisplayQuote.Show();
+            this.Hide();
 
             //Input
             try
@@ -219,7 +218,6 @@ namespace MegaDesk_4_Jean_Oliveira
             };
 
             // get rush order selection
-            // consider using LINQ
             if (threeRadioButton.Checked)
             {
                 rushDays = 3;
@@ -279,7 +277,7 @@ namespace MegaDesk_4_Jean_Oliveira
                 MessageBox.Show(ex.Message, "Check desk Order Output Methods");
             }
 
-            //Show confirmation page on screen
+            //Show order details
             DeskOrderView newOrderView = new DeskOrderView(newOrder.quoteDate, newDesk.width, newDesk.depth,
                 newDesk.numDrawers, newDesk.desktopMaterial.ToString(), rushDays, newOrder.deskQuote);
             newOrderView.Show();
