@@ -130,7 +130,7 @@
             this.QuoteDateOrderViewBox.Name = "QuoteDateOrderViewBox";
             this.QuoteDateOrderViewBox.ReadOnly = true;
             this.QuoteDateOrderViewBox.Size = new System.Drawing.Size(100, 20);
-            this.QuoteDateOrderViewBox.TabIndex = 8;
+            this.QuoteDateOrderViewBox.TabIndex = 1;
             this.QuoteDateOrderViewBox.TextChanged += new System.EventHandler(this.QuoteDateOrderViewBox_TextChanged);
             // 
             // WidthOrderViewBox
@@ -139,7 +139,7 @@
             this.WidthOrderViewBox.Name = "WidthOrderViewBox";
             this.WidthOrderViewBox.ReadOnly = true;
             this.WidthOrderViewBox.Size = new System.Drawing.Size(100, 20);
-            this.WidthOrderViewBox.TabIndex = 9;
+            this.WidthOrderViewBox.TabIndex = 2;
             // 
             // DepthOrderViewBox
             // 
@@ -147,7 +147,7 @@
             this.DepthOrderViewBox.Name = "DepthOrderViewBox";
             this.DepthOrderViewBox.ReadOnly = true;
             this.DepthOrderViewBox.Size = new System.Drawing.Size(100, 20);
-            this.DepthOrderViewBox.TabIndex = 10;
+            this.DepthOrderViewBox.TabIndex = 3;
             this.DepthOrderViewBox.TextChanged += new System.EventHandler(this.DepthOrderViewBox_TextChanged);
             // 
             // NumberOfDrawersOrderViewBox
@@ -156,7 +156,7 @@
             this.NumberOfDrawersOrderViewBox.Name = "NumberOfDrawersOrderViewBox";
             this.NumberOfDrawersOrderViewBox.ReadOnly = true;
             this.NumberOfDrawersOrderViewBox.Size = new System.Drawing.Size(100, 20);
-            this.NumberOfDrawersOrderViewBox.TabIndex = 11;
+            this.NumberOfDrawersOrderViewBox.TabIndex = 4;
             // 
             // DesktopMaterialOrderViewBox
             // 
@@ -164,7 +164,7 @@
             this.DesktopMaterialOrderViewBox.Name = "DesktopMaterialOrderViewBox";
             this.DesktopMaterialOrderViewBox.ReadOnly = true;
             this.DesktopMaterialOrderViewBox.Size = new System.Drawing.Size(100, 20);
-            this.DesktopMaterialOrderViewBox.TabIndex = 12;
+            this.DesktopMaterialOrderViewBox.TabIndex = 5;
             // 
             // RushDaysOrderViewBox
             // 
@@ -172,7 +172,7 @@
             this.RushDaysOrderViewBox.Name = "RushDaysOrderViewBox";
             this.RushDaysOrderViewBox.ReadOnly = true;
             this.RushDaysOrderViewBox.Size = new System.Drawing.Size(100, 20);
-            this.RushDaysOrderViewBox.TabIndex = 13;
+            this.RushDaysOrderViewBox.TabIndex = 6;
             // 
             // QuoteAmountOrderViewBox
             // 
@@ -180,7 +180,7 @@
             this.QuoteAmountOrderViewBox.Name = "QuoteAmountOrderViewBox";
             this.QuoteAmountOrderViewBox.ReadOnly = true;
             this.QuoteAmountOrderViewBox.Size = new System.Drawing.Size(100, 20);
-            this.QuoteAmountOrderViewBox.TabIndex = 14;
+            this.QuoteAmountOrderViewBox.TabIndex = 7;
             // 
             // DeskOrderView
             // 
@@ -203,7 +203,7 @@
             this.Controls.Add(this.DeskWidthLabel);
             this.Controls.Add(this.QuoteDateLabel);
             this.Name = "DeskOrderView";
-            this.Text = "DeskOrderView";
+            this.Text = "Desk Order View";
             this.Load += new System.EventHandler(this.DeskOrderView_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

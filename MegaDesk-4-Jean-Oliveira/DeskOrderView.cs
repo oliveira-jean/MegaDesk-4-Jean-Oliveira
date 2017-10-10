@@ -14,23 +14,23 @@ namespace MegaDesk_4_Jean_Oliveira
     {
         private DateTime quoteDate;
         private int depth;
+        private int width;
         private int numDrawers;
-        private string v;
         private int rushDays;
         private int deskQuote;
-
+        private string desktopMaterial;
+        
         public DeskOrderView()
         {
             InitializeComponent();
         }
 
-        public DeskOrderView(DateTime quoteDate, int width, int depth, int numDrawers, string v, int rushDays, int deskQuote)
+        public DeskOrderView(DateTime quoteDate, int width, int depth, int numDrawers, string desktopMaterial, int rushDays, int deskQuote)
         {
             this.quoteDate = quoteDate;
-            Width = width;
+            this.width = width;
             this.depth = depth;
             this.numDrawers = numDrawers;
-            this.v = v;
             this.rushDays = rushDays;
             this.deskQuote = deskQuote;
         }

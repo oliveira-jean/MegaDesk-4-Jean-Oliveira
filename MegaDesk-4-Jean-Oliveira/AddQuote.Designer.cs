@@ -202,7 +202,7 @@
             this.DrawersCombobox.Location = new System.Drawing.Point(15, 162);
             this.DrawersCombobox.Name = "DrawersCombobox";
             this.DrawersCombobox.Size = new System.Drawing.Size(121, 21);
-            this.DrawersCombobox.TabIndex = 14;
+            this.DrawersCombobox.TabIndex = 3;
             // 
             // AddQuote
             // 

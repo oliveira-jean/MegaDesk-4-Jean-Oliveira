@@ -8,12 +8,10 @@ namespace MegaDesk_4_Jean_Oliveira
 {
     class Desk
     {
-        internal string desktopMaterial;
-
         public int width { get; set; }
         public int depth { get; set; }
         public int numDrawers { get; set; }
-       // public DesktopMaterial material { get; set; }
+        public DesktopMaterial material { get; set; }
 
         public enum DesktopMaterial
         {
