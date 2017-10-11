@@ -56,13 +56,13 @@
     </Compile>
     <Compile Include="Desk.cs" />
     <Compile Include="DeskOrder.cs" />
-    <Compile Include="DeskOrderView.cs">
+    <Compile Include="DeskQuote.cs" />
+    <Compile Include="displayQuote.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DeskOrderView.Designer.cs">
-      <DependentUpon>DeskOrderView.cs</DependentUpon>
+    <Compile Include="displayQuote.Designer.cs">
+      <DependentUpon>displayQuote.cs</DependentUpon>
     </Compile>
-    <Compile Include="DeskQuote.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,8 +86,8 @@
     <EmbeddedResource Include="AddQuote.resx">
       <DependentUpon>AddQuote.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DeskOrderView.resx">
-      <DependentUpon>DeskOrderView.cs</DependentUpon>
+    <EmbeddedResource Include="displayQuote.resx">
+      <DependentUpon>displayQuote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

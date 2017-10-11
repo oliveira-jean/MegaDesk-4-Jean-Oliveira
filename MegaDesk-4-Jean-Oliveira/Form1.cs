@@ -36,7 +36,7 @@ namespace MegaDesk_4_Jean_Oliveira
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

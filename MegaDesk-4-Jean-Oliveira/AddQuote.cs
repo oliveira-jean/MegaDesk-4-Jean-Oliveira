@@ -29,14 +29,15 @@ namespace MegaDesk_4_Jean_Oliveira
         # endregion
 
         
-        private string desktopMaterial;
+       // private string desktopMaterial;
 
         public AddQuote()
         {
             InitializeComponent();
 
             List<DesktopMaterial> materials = Enum.GetValues(typeof(DesktopMaterial)).Cast<DesktopMaterial>().ToList();
-
+            
+            //Old code
             //List<Desk.DesktopMaterial> materials = new List<Desk.DesktopMaterial>()
             //{
             //    Desk.DesktopMaterial.Laminate,
@@ -48,11 +49,6 @@ namespace MegaDesk_4_Jean_Oliveira
 
             desktopMaterialComboBox.DataSource = materials;
             
-        }
-
-        private void WidthTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         // validating for WIDTH
@@ -71,7 +67,7 @@ namespace MegaDesk_4_Jean_Oliveira
             {
                 if (width < MINWIDTH || width > MAXWIDTH)
                 {
-                    MessageBox.Show("Please enter a width from " + MINWIDTH + " to " + MAXWIDTH + "inches.");
+                    MessageBox.Show("Please enter a width from " + MINWIDTH + " to " + MAXWIDTH + " inches.");
                     widthTextBox.Text = "";
                     widthTextBox.Focus();
                 }
@@ -84,12 +80,6 @@ namespace MegaDesk_4_Jean_Oliveira
             }
         }
         
-        // validating for DEPTH
-        private void DepthTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void depthTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -128,39 +118,42 @@ namespace MegaDesk_4_Jean_Oliveira
 
         }
 
-        //private void NoneRadioButton_CheckedChanged(object sender, EventArgs e)
-        //{
+        private void NoneRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
 
-        //}
+        }
 
-        //private void ThreeRadioButton_CheckedChanged(object sender, EventArgs e)
-        //{
+        private void ThreeRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
 
-        //}
+        }
 
-        //private void FiveRadioButton_CheckedChanged(object sender, EventArgs e)
-        //{
+        private void FiveRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
 
-        //}
+        }
 
-        //private void SevenRadioButton_CheckedChanged(object sender, EventArgs e)
-        //{
+        private void SevenRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
 
-        //}
+        }
 
         private void SubmitOrderButton_Click(object sender, EventArgs e)
         {
 
-            //DeskOrderView newDeskOrderView = new DeskOrderView();
-            //newDeskOrderView.Show();
-            //this.Hide();
-
             //Input
             try
             {
+                //get width and depth
                 width = int.Parse(widthTextBox.Text);
                 depth = int.Parse(depthTextBox.Text);
+               
+                //get the number of drawers from the drawer combobox
+                drawers = int.Parse(DrawersCombobox.SelectedItem.ToString());
 
+                //get the material type from the material combobox
+                material = (desktopMaterialComboBox.SelectedItem.ToString());
+                
                 if (width < MINWIDTH || width > MAXWIDTH)
                 {
                     MessageBox.Show("Please a width from 24 to 96 inches.");
@@ -174,13 +167,6 @@ namespace MegaDesk_4_Jean_Oliveira
                     depthTextBox.Focus();
                     return;
                 }
-
-                //get the number of drawers from the drawer combobox
-                drawers = int.Parse(DrawersCombobox.SelectedItem.ToString());
-                
-                //get the material type from the material combobox
-                material = (desktopMaterialComboBox.SelectedItem.ToString());
-               
             }
 
             catch (Exception ex)
@@ -266,15 +252,25 @@ namespace MegaDesk_4_Jean_Oliveira
             }
 
             //Show order details
-            DeskOrderView newDeskOrderView = new DeskOrderView(newOrder.quoteDate,
+            displayQuote newDisplayQuote = new displayQuote(newOrder.quoteDate,
                                                            newDesk.width,
                                                            newDesk.depth,
                                                            newDesk.numDrawers,
                                                            newDesk.material.ToString(),
                                                            rushDays,
                                                            newOrder.deskQuote);
-            newDeskOrderView.Show();
+            newDisplayQuote.Show();
             this.Hide();
+        }
+
+        private void widthTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddQuote_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -50,16 +50,17 @@
             // addQuoteFormLabel
             // 
             this.addQuoteFormLabel.AutoSize = true;
-            this.addQuoteFormLabel.Location = new System.Drawing.Point(191, 9);
+            this.addQuoteFormLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addQuoteFormLabel.Location = new System.Drawing.Point(107, 30);
             this.addQuoteFormLabel.Name = "addQuoteFormLabel";
-            this.addQuoteFormLabel.Size = new System.Drawing.Size(86, 13);
+            this.addQuoteFormLabel.Size = new System.Drawing.Size(222, 20);
             this.addQuoteFormLabel.TabIndex = 0;
-            this.addQuoteFormLabel.Text = "Add Desk Quote";
+            this.addQuoteFormLabel.Text = "Create a New  Desk Quote";
             // 
             // widthInputLabel
             // 
             this.widthInputLabel.AutoSize = true;
-            this.widthInputLabel.Location = new System.Drawing.Point(12, 39);
+            this.widthInputLabel.Location = new System.Drawing.Point(9, 78);
             this.widthInputLabel.Name = "widthInputLabel";
             this.widthInputLabel.Size = new System.Drawing.Size(276, 13);
             this.widthInputLabel.TabIndex = 1;
@@ -67,27 +68,26 @@
             // 
             // widthTextBox
             // 
-            this.widthTextBox.Location = new System.Drawing.Point(15, 55);
+            this.widthTextBox.Location = new System.Drawing.Point(15, 94);
             this.widthTextBox.Name = "widthTextBox";
             this.widthTextBox.Size = new System.Drawing.Size(100, 20);
             this.widthTextBox.TabIndex = 1;
-            this.widthTextBox.TextChanged += new System.EventHandler(this.WidthTextBox_TextChanged);
+            this.widthTextBox.TextChanged += new System.EventHandler(this.widthTextBox_TextChanged);
             this.widthTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.widthTextBox_Validating);
             // 
             // depthTextBox
             // 
-            this.depthTextBox.Location = new System.Drawing.Point(15, 108);
+            this.depthTextBox.Location = new System.Drawing.Point(15, 151);
             this.depthTextBox.Name = "depthTextBox";
             this.depthTextBox.Size = new System.Drawing.Size(100, 20);
             this.depthTextBox.TabIndex = 2;
-            this.depthTextBox.TextChanged += new System.EventHandler(this.DepthTextBox_TextChanged);
             this.depthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.depthTextBox_KeyPress);
             this.depthTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.depthTextBox_Validating);
             // 
             // depthInputLabel
             // 
             this.depthInputLabel.AutoSize = true;
-            this.depthInputLabel.Location = new System.Drawing.Point(12, 92);
+            this.depthInputLabel.Location = new System.Drawing.Point(12, 135);
             this.depthInputLabel.Name = "depthInputLabel";
             this.depthInputLabel.Size = new System.Drawing.Size(276, 13);
             this.depthInputLabel.TabIndex = 3;
@@ -96,7 +96,7 @@
             // drawersSelectLabel
             // 
             this.drawersSelectLabel.AutoSize = true;
-            this.drawersSelectLabel.Location = new System.Drawing.Point(12, 145);
+            this.drawersSelectLabel.Location = new System.Drawing.Point(12, 190);
             this.drawersSelectLabel.Name = "drawersSelectLabel";
             this.drawersSelectLabel.Size = new System.Drawing.Size(164, 13);
             this.drawersSelectLabel.TabIndex = 5;
@@ -105,7 +105,7 @@
             // desktopMaterialComboBox
             // 
             this.desktopMaterialComboBox.FormattingEnabled = true;
-            this.desktopMaterialComboBox.Location = new System.Drawing.Point(15, 212);
+            this.desktopMaterialComboBox.Location = new System.Drawing.Point(12, 257);
             this.desktopMaterialComboBox.Name = "desktopMaterialComboBox";
             this.desktopMaterialComboBox.Size = new System.Drawing.Size(121, 21);
             this.desktopMaterialComboBox.TabIndex = 4;
@@ -114,7 +114,7 @@
             // materialsSelectLabel
             // 
             this.materialsSelectLabel.AutoSize = true;
-            this.materialsSelectLabel.Location = new System.Drawing.Point(12, 196);
+            this.materialsSelectLabel.Location = new System.Drawing.Point(12, 241);
             this.materialsSelectLabel.Name = "materialsSelectLabel";
             this.materialsSelectLabel.Size = new System.Drawing.Size(160, 13);
             this.materialsSelectLabel.TabIndex = 7;
@@ -123,7 +123,10 @@
             // noneRadioButton
             // 
             this.noneRadioButton.AutoSize = true;
-            this.noneRadioButton.Location = new System.Drawing.Point(15, 270);
+            this.noneRadioButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.noneRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noneRadioButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.noneRadioButton.Location = new System.Drawing.Point(15, 306);
             this.noneRadioButton.Name = "noneRadioButton";
             this.noneRadioButton.Size = new System.Drawing.Size(49, 17);
             this.noneRadioButton.TabIndex = 5;
@@ -135,7 +138,7 @@
             // threeRadioButton
             // 
             this.threeRadioButton.AutoSize = true;
-            this.threeRadioButton.Location = new System.Drawing.Point(70, 270);
+            this.threeRadioButton.Location = new System.Drawing.Point(70, 306);
             this.threeRadioButton.Name = "threeRadioButton";
             this.threeRadioButton.Size = new System.Drawing.Size(56, 17);
             this.threeRadioButton.TabIndex = 6;
@@ -147,7 +150,7 @@
             // fiveRadioButton
             // 
             this.fiveRadioButton.AutoSize = true;
-            this.fiveRadioButton.Location = new System.Drawing.Point(132, 270);
+            this.fiveRadioButton.Location = new System.Drawing.Point(132, 306);
             this.fiveRadioButton.Name = "fiveRadioButton";
             this.fiveRadioButton.Size = new System.Drawing.Size(56, 17);
             this.fiveRadioButton.TabIndex = 7;
@@ -159,7 +162,7 @@
             // sevenRadioButton
             // 
             this.sevenRadioButton.AutoSize = true;
-            this.sevenRadioButton.Location = new System.Drawing.Point(194, 270);
+            this.sevenRadioButton.Location = new System.Drawing.Point(194, 306);
             this.sevenRadioButton.Name = "sevenRadioButton";
             this.sevenRadioButton.Size = new System.Drawing.Size(56, 17);
             this.sevenRadioButton.TabIndex = 8;
@@ -171,7 +174,7 @@
             // rushOrderLabel
             // 
             this.rushOrderLabel.AutoSize = true;
-            this.rushOrderLabel.Location = new System.Drawing.Point(12, 254);
+            this.rushOrderLabel.Location = new System.Drawing.Point(12, 290);
             this.rushOrderLabel.Name = "rushOrderLabel";
             this.rushOrderLabel.Size = new System.Drawing.Size(61, 13);
             this.rushOrderLabel.TabIndex = 13;
@@ -180,9 +183,9 @@
             // submitOrderButton
             // 
             this.submitOrderButton.AutoSize = true;
-            this.submitOrderButton.Location = new System.Drawing.Point(194, 325);
+            this.submitOrderButton.Location = new System.Drawing.Point(172, 365);
             this.submitOrderButton.Name = "submitOrderButton";
-            this.submitOrderButton.Size = new System.Drawing.Size(78, 23);
+            this.submitOrderButton.Size = new System.Drawing.Size(116, 33);
             this.submitOrderButton.TabIndex = 9;
             this.submitOrderButton.Text = "Submit Order";
             this.submitOrderButton.UseVisualStyleBackColor = true;
@@ -199,7 +202,7 @@
             "5",
             "6",
             "7"});
-            this.DrawersCombobox.Location = new System.Drawing.Point(15, 162);
+            this.DrawersCombobox.Location = new System.Drawing.Point(15, 206);
             this.DrawersCombobox.Name = "DrawersCombobox";
             this.DrawersCombobox.Size = new System.Drawing.Size(121, 21);
             this.DrawersCombobox.TabIndex = 3;
@@ -208,7 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 388);
+            this.ClientSize = new System.Drawing.Size(423, 421);
             this.Controls.Add(this.DrawersCombobox);
             this.Controls.Add(this.submitOrderButton);
             this.Controls.Add(this.rushOrderLabel);
@@ -226,6 +229,7 @@
             this.Controls.Add(this.addQuoteFormLabel);
             this.Name = "AddQuote";
             this.Text = "AddQuote";
+            this.Load += new System.EventHandler(this.AddQuote_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
