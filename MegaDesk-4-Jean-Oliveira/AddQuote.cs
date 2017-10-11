@@ -227,11 +227,12 @@ namespace MegaDesk_4_Jean_Oliveira
                 string json = Newtonsoft.Json.JsonConvert.SerializeObject(saveNewDeskOrder);
 
                 //Store newOrder into a List object -make deskOrders available to search
-                List<DeskOrder> deskOrders = new List<DeskOrder>();
-                    deskOrders.Add(newOrder);
+                List<DeskOrder> deskOrders = new List<DeskOrder>
+                {
+                    newOrder
+                };
 
                 //Store deskOrder into file
-
                 string cFile = @"quotes.txt";
                 if (!File.Exists(cFile))
                 {

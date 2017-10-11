@@ -8,9 +8,6 @@ namespace MegaDesk_4_Jean_Oliveira
 {
     class DeskOrder
     {
-        //The DeskOrder class contains the logic behind a quote for a new desk order based upon size,
-        // of drawers, desktop material(Desk Class), and if the desk has been placed on rush order.
-
         private int doWidth;
         private int doDepth;
         private int doSurfaceArea;
